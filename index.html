@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Marianella Salinas</title>
+  <style>
+    /* Reset some basic styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden; /* Prevent horizontal scroll from sidebar transitions */
+    }
+
+ /* About Section Layout */
+        .about-container {
+          display: flex;          /* Side-by-side layout */
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 10rem;              /* Space between image & text */
+        }
+    
+        .profile-pic img {
+          width: 180px;           /* Fixed width */
+          height: 180px;          /* Matching height -> square */
+          object-fit: cover;      /* Crop to fit the square */
+          border: 2px solid #ccc; /* Optional border */
+        }
+
+    /* Button to toggle sidebar */
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 999; /* Keep it above other elements */
+    }
+
+    /* Sidebar styling */
+    #sidebar {
+      position: fixed;
+      top: 0;
+      right: -250px; /* Hidden by default (slide in from right) */
+      width: 250px;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      transition: right 0.3s ease;
+      z-index: 998; /* Just below the toggle button */
+    }
+    #sidebar.active {
+      right: 0;
+    }
+
+    #sidebar h2 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    #sidebar a {
+      display: block;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    #sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 80vh;        /* Full browser height */
+      width: 100%;
+      background: url("images/homepage.jpg") center center no-repeat;
+      background-size: cover;   /* Fills container, may crop */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Scroll-down arrow link */
+    .scroll-down {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 2rem;
+      color: #fff;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+    .scroll-down:hover {
+      transform: translateY(5px);
+    }
+
+    /* Section styling */
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    section p {
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Light-purple block for "Interests" */
+    .light-purple {
+      background-color: #e7d9f5;
+    }
+
+    /* Simple link/button styling for bottom links */
+    .link-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .link-buttons a {
+      text-decoration: none;
+      background-color: #9f80be;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .link-buttons a:hover {
+      background-color: #633491;
+    }
+
+    /* About Section Layout for headshot + text side by side */
+    .about-container {
+      display: flex;            /* Side-by-side layout */
+      flex-direction: row;
+      flex-wrap: wrap;          /* Wrap on smaller screens */
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    /* Make the profile picture square */
+    .profile-pic img {
+      width: 380px;         /* Set a fixed width */
+      height: 410px;        /* Matching height -> square */
+      object-fit: cover;    /* Crop the image if needed */
+      border-radius: 0;     /* Remove circular border */
+      border: 0.5px solid #633491;
+    }
+
+    /* Basic responsive behavior */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .scroll-down {
+        font-size: 1.5rem;
+      }
+      section {
+        padding: 2rem 1rem;
+      }
+      .about-container {
+        flex-direction: column; /* Stack image and text vertically on small screens */
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <button class="toggle-btn" onclick="toggleSidebar()" style="font-family: 'Roboto', sans-serif;">&#9776;</button>
+  <div id="sidebar" style="font-family: 'Roboto', sans-serif;">
+    <h2 style="position: relative; top: -1px;">Marianella Salinas</h2>
+    <a href="#home" onclick="toggleSidebar()">Home</a>
+    <a href="#about" onclick="toggleSidebar()">About</a>
+    <a href="#interests" onclick="toggleSidebar()">Interests</a>
+    <a href="#contact" onclick="toggleSidebar()">Contact</a>
+    <a href="#links" onclick="toggleSidebar()">Links</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div style="font-family: 'Roboto', sans-serif; font-size: 50px; text-align: center; margin-bottom: 2rem; color: white;">Marianella E Salinas</div>
+    <a class="scroll-down" href="#about">&#9662;</a> <!-- Down arrow -->
+  </section>
+
+<!-- About Section -->
+
+<section id="about">
+    <div style="font-family: 'Roboto', sans-serif; font-size: 30px; text-align: center; margin-bottom: 2rem;">About me</div>
+    <div class="about-container" style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start;">
+            <!-- Profile Picture on the left -->
+            <div class="profile-pic">
+                    <img src="images/profile.jpg" alt="Profile Picture" />
+            </div>
+            <!-- About Text on the right -->
+            <div class="about-text" style="font-family: 'Roboto', sans-serif; font-size: 12px;">
+                    <p>
+                            I am an incoming Machine Learning Software Engineer at 
+                            <a href="https://permanence.ai/" target="_blank" style="color: #633491;">Permenance AI</a>,
+                            where I will focus on developing real-world AI solutions. Before joining Permenance,
+                            I was a Venture Capital Summer Associate at Connecticut Innovations, evaluating and 
+                            advising on AI-driven products in FinTech, ClimateTech, and Bioscience. I also spent 
+                            two summers at RBC Capital Markets as a Software Engineer Intern, where I built AI 
+                            chatbots and data visualization tools for quantitative traders.
+                    </p>
+                    <p>
+                            I will receive my M.Eng. in Computer Science from Cornell Tech in May 2025. I earned my 
+                            B.S. in Computer Science as an Honors and STEM Scholar, with minors in Math and 
+                            Entrepreneurship, from the University of Connecticut in 2024. During my undergraduate 
+                            years, I was involved in several research and leadership initiatives, including serving 
+                            as Managing Director of 
+                            <a href="https://hillsideventures.uconn.edu/venture-fund/" target="_blank" style="color: #633491;" >Hillside Ventures</a>, 
+                            UConn's student-run venture capital fund, and as Principal Investigator on an 
+                            <a href="https://ugradresearch.uconn.edu/bold/scholars/" target="_blank" style="color: #633491;" >IRB-approved study</a> 
+                            to improve equity and inclusion in STEM education.
+                    </p>
+                    <p>
+                            My work bridges cutting-edge machine learning with practical business applications, 
+                            from automating due diligence in venture capital to optimizing data flows in capital 
+                            markets. At Permenance AI, I am excited to build on this experience by designing 
+                            advanced AI solutions that drive meaningful impact across industries.
+                    </p>
+            </div>
+    </div>
+</section>
+
+
+  <!-- Interests Section -->
+  <section id="interests" class="light-purple">
+    <div style="font-family: 'Roboto', sans-serif; font-size: 30px; text-align: center;">Interests</div>
+    <p style="text-align: center;">
+      <div>
+        <div style="font-family: 'Roboto', sans-serif; font-size: 14px;">
+          <p style="margin-bottom: 0.5rem;">Research Interests: Natural Language Processing, Automated Code Generation, Computer Vision, Engineering Education</p>
+          <p style="margin-bottom: 0.5rem;">Business Interests: Building B2B Generative AI Tools, DeepTech Venture Capital, ClimateTech</p>
+          <p style="margin-bottom: 0.5rem;">Hobbies: Backpacking Latin America, Cooking Peruvian Food, Reading Psychology Books, Hosting Events for Friends, Houseplants</p>
+        </div>
+      </div>
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact"> 
+    
+    <div style="font-family: 'Roboto', sans-serif; font-size: 30px; text-align: center; margin-bottom: 2rem;">Contact</div>
+    <p style="text-align: center;">
+      <img src="images/send.png" alt="Email Icon" style="vertical-align: middle; margin-right: 3px; width: 18px; height: 18px;">
+      Feel free to reach out to me at ms3783 [AT] cornell [DOT] edu
+    </p>
+    <!-- Insert a contact form or your email, etc. -->
+  </section>
+
+  <!-- Links Section -->
+  <section id="links">
+    <div style="font-family: 'Roboto', sans-serif; font-size: 30px; text-align: center; margin-bottom: 2rem;">Links</div>
+    <div class="link-buttons">
+      <a href="page2.html">Resume</a>
+      <a href="https://github.com/marianellass" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/marianella-salinas-b41699203/" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
