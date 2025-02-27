@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Marianella Salinas</title>
   <style>
+
+
     /* Reset some basic styling */
     * {
       margin: 0;
@@ -193,17 +195,17 @@
   <!-- Sidebar -->
   <button class="toggle-btn" onclick="toggleSidebar()" style="font-family: 'Roboto', sans-serif;">&#9776;</button>
   <div id="sidebar" style="font-family: 'Roboto', sans-serif;">
-    <h2 style="position: relative; top: -1px;">Marianella Salinas</h2>
+    <h2 style="position: relative; font-family: 'Roboto', sans-serif; top: -1px;">Marianella Salinas</h2>
     <a href="#home" onclick="toggleSidebar()">Home</a>
     <a href="#about" onclick="toggleSidebar()">About</a>
     <a href="#interests" onclick="toggleSidebar()">Interests</a>
+    <a href="#projects" onclick="toggleSidebar()">Projects</a>
     <a href="#contact" onclick="toggleSidebar()">Contact</a>
-    <a href="#links" onclick="toggleSidebar()">Links</a>
   </div>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <div style="font-family: 'Roboto', sans-serif; font-size: 50px; text-align: center; margin-bottom: 2rem; color: white;">Marianella E Salinas</div>
+    <div style="font-family: 'Roboto', sans-serif; font-size: 50px; text-align: center; margin-bottom: 2rem; color: white; top:-10px;">Marianella E Salinas</div>
     <a class="scroll-down" href="#about">&#9662;</a> <!-- Down arrow -->
   </section>
 
@@ -248,7 +250,6 @@
     </div>
 </section>
 
-
   <!-- Interests Section -->
   <section id="interests" class="light-purple">
     <div style="font-family: 'Roboto', sans-serif; font-size: 30px; text-align: center;">Interests</div>
@@ -257,11 +258,75 @@
         <div style="font-family: 'Roboto', sans-serif; font-size: 14px;">
           <p style="margin-bottom: 0.5rem;">Research Interests: Natural Language Processing, Automated Code Generation, Computer Vision, Engineering Education</p>
           <p style="margin-bottom: 0.5rem;">Business Interests: Building B2B Generative AI Tools, DeepTech Venture Capital, ClimateTech</p>
-          <p style="margin-bottom: 0.5rem;">Hobbies: Backpacking Latin America, Cooking Peruvian Food, Reading Psychology Books, Hosting Events for Friends, Houseplants</p>
+          <p style="margin-bottom: 0.5rem;">Hobbies: Traveling Latin America, Reading Psychology Books, Hosting Events for Friends, Knitting, Taking care of houseplants</p>
         </div>
       </div>
     </p>
   </section>
+
+<section id="projects" style="padding: 4rem 2rem; font-family: 'Roboto', sans-serif; font-size: 12px;">
+  <div style="text-align: center; margin-bottom: 2rem; font-size: 30px;">Projects</div>
+  <div class="project-slider" style="position: relative; max-width: 600px; margin: 0 auto;">
+    <div class="project-slide" style="display: none; text-align: center;">
+      <img src="images/StockProject.jpg" alt="Honors Thesis" style="width: 100%; height: 300px; object-fit: cover;">
+      <div style="font-family: 'Roboto', sans-serif; font-size: 13pt; text-align: center; margin-top: 1rem;">
+        <a href="https://github.com/marianellass/Honors-Thesis" target="_blank" style="color: #633491;">UConn CS Honors Thesis</a>
+      </div>
+      <div class="project-description" style="margin-top: 1rem;">I applied Support Vector Regression to investigate whether macroeconomic indicators such as GDP and CPI can improve stock price predictions. 
+        Centering on AAPL and comparing it with Walmart and PepsiCo, I found that adding these broader economic factors often reduces predictive accuracy for tech stocks, yet can enhance performance in consumer-driven industries. 
+        This thesis highlights the importance of industry context when incorporating macroeconomic signals into AI-based stock forecasting.</div>
+    </div>
+    <div class="project-slide" style="display: none; text-align: center;"> 
+      <img src="images/UnicornProject.png" alt="Unicorn Project" style="width: 100%; height: 300px; object-fit: cover;">
+      <div style="font-family: 'Roboto', sans-serif; font-size: 13pt; text-align: center; margin-top: 1rem;">
+        <a href="https://github.com/marianellass/Unicorn-Startup-EDA" target="_blank" style="color: #633491;">Unicorn Startup Analysis Dashboard: Identifying Investment Trends and Educational Background of Founders and Investors</a>
+      </div>
+      <div class="project-description" style="margin-top: 1rem;">I built an interactive dashboard to uncover patterns in 900+ unicorn companies and 20,000+ startup ecosystem players like founders, CEOs, and VCs. 
+        By combining data visualization techniques like treemaps, heatmaps, and network graphs with K-Means and GMM clustering techniques, I identified which countries and industries dominate the unicorn scene and how educational networks—from Universities like Harvard and Stanford—shape the paths of founders and investors. 
+        Key insights include the outsize influence of the U.S. and China, the importance of alumni connections in startup success, and notable differences in degree backgrounds between younger founders and more MBA-focused VCs. This project highlights how data-driven insights can help entrepreneurs, investors, and educators better navigate the global venture capital landscape.</div>
+    </div>
+    <div class="project-slide" style="display: none; text-align: center;">
+      <img src="images/boldp.png" alt="Bold Project" style="width: 100%; height: 300px; object-fit: cover;">
+      <div style="font-family: 'Roboto', sans-serif; font-size: 13pt; text-align: center; margin-top: 1rem;">
+        <a href="https://drive.google.com/file/d/1r-XOdG0E7nvVSwYesgWs79YHyYN9Obe3/view?usp=sharing" target="_blank" style="color: #633491;"> Investigating Factors Affecting Success for Underrepresented Minority Students in UConn's School of Engineering</a>
+      </div>
+      <div class="project-description" style="margin-top: 1rem;">I led an IRB mixed-methods research project investigating the factors affecting success and retention of underrepresented minority students in UConn’s School of Engineering. 
+        Through surveys, interviews, and quantitative data analysis, I found that URM students often face challenges such as isolation, cultural mismatch, and foundational knowledge gaps—particularly in introductory STEM courses.
+        Our findings underscore the critical role of social capital and bridging programs like UConn’s BRIDGE in fostering belonging, mitigating high drop/fail/withdraw rates, and ultimately improving retention among these students. 
+        This research highlights the importance of inclusive educational environments and proactive measures to ensure URM success in engineering.</div>
+    </div>
+    <div class="project-slide" style="display: none; text-align: center;">
+      <img src="images/SDP.jpg" alt="Virtual Reality Laser Project" style="width: 100%; height: 300px; object-fit: cover;">
+      <div style="font-family: 'Roboto', sans-serif; font-size: 13pt; text-align: center; margin-top: 1rem;">
+      <a href="https://drive.google.com/file/d/17pdwdUj6V7feYAVE4U1L5ny2GvHqXVL9/view?usp=sharing" target="_blank" style="color: #633491;">TRUMPF Virtual Reality Laser Training</a>
+    </div>
+    <div class="project-description" style="margin-top: 1rem;">I co-developed a virtual reality training simulation in Unity for the TRUMPF TruLaser 2030 machine.
+      This VR environment gamifies critical tasks—like part rotation, machine setup, and safety checks—so new operators can learn interactively without risking real equipment downtime. 
+      By integrating physics-based interactions and guided scenarios, our project offers a hands-on, immersive training solution that improves accessibility, boosts operator confidence, and helps manufacturers streamline their onboarding process.</div>
+    </div>
+    <button class="prev" onclick="changeSlide(-1)" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); background: none; border: none; font-size: 24px; cursor: pointer;">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); background: none; border: none; font-size: 24px; cursor: pointer;">&#10095;</button>
+  </div>
+  <script>
+    var slideIndex = 0;
+    showSlide(slideIndex);
+    function showSlide(n) {
+      var slides = document.getElementsByClassName("project-slide");
+      if (n >= slides.length) { slideIndex = 0; }
+      if (n < 0) { slideIndex = slides.length - 1; }
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex].style.display = "block";
+    }
+    function changeSlide(n) {
+      slideIndex += n;
+      showSlide(slideIndex);
+    }
+  </script>
+</section>
+
+
 
   <!-- Contact Section -->
   <section id="contact"> 
@@ -269,14 +334,8 @@
     <div style="font-family: 'Roboto', sans-serif; font-size: 30px; text-align: center; margin-bottom: 2rem;">Contact</div>
     <p style="text-align: center;">
       <img src="images/send.png" alt="Email Icon" style="vertical-align: middle; margin-right: 3px; width: 18px; height: 18px;">
-      Feel free to reach out to me at ms3783 [AT] cornell [DOT] edu
+      <a href="mailto:ms3783@cornell.edu" style="color: #633491;">ms3783@cornell.edu </a>
     </p>
-    <!-- Insert a contact form or your email, etc. -->
-  </section>
-
-  <!-- Links Section -->
-  <section id="links">
-    <div style="font-family: 'Roboto', sans-serif; font-size: 30px; text-align: center; margin-bottom: 2rem;">Links</div>
     <div class="link-buttons">
       <a href="page2.html">Resume</a>
       <a href="https://github.com/marianellass" target="_blank">GitHub</a>
