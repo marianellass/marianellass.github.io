@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Marianella Salinas</title>
   <style>
 
@@ -15,7 +16,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      overflow-x: hidden; /* Prevent horizontal scroll from sidebar transitions */
+      overflow-x: hidden; 
     }
 
  /* About Section Layout */
@@ -28,11 +29,18 @@
     
         .profile-pic img {
           width: 180px;           /* Fixed width */
-          height: 180px;          /* Matching height -> square */
+          height: auto;          /* Matching height -> square */
           object-fit: cover;      /* Crop to fit the square */
           border: 2px solid #ccc; /* Optional border */
         }
 
+        .project-slide img {
+          width: 100%;
+          height: auto; /* or a max-height if needed */
+          object-fit: cover;
+        }
+
+        
     /* Button to toggle sidebar */
     .toggle-btn {
       position: fixed;
@@ -163,12 +171,40 @@
       gap: 2rem;
     }
 
+    @media (max-width: 600px) {
+      .about-container {
+        flex-direction: column; 
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 992px) {
+      /* For tablet screens */
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      /* Adjust any container widths, etc. */
+    }
+    @media (max-width: 600px) {
+      /* For mobile screens */
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      #sidebar {
+        width: 200px;
+      }
+    }
+    
+    
     /* Make the profile picture square */
     .profile-pic img {
-      width: 380px;         /* Set a fixed width */
-      height: 410px;        /* Matching height -> square */
-      object-fit: cover;    /* Crop the image if needed */
-      border-radius: 0;     /* Remove circular border */
+      width: 100%;
+      max-width: 380px;
+      height: auto;     
+      object-fit: cover;
       border: 0.5px solid #633491;
     }
 
@@ -195,7 +231,7 @@
   <!-- Sidebar -->
   <button class="toggle-btn" onclick="toggleSidebar()" style="font-family: 'Roboto', sans-serif;">&#9776;</button>
   <div id="sidebar" style="font-family: 'Roboto', sans-serif;">
-    <h2 style="position: relative; font-family: 'Roboto', sans-serif; top: -1px;">Marianella Salinas</h2>
+    <h2 style="position: relative; font-family: 'Roboto', sans-serif; top: -10px;">Marianella Salinas</h2>
     <a href="#home" onclick="toggleSidebar()">Home</a>
     <a href="#about" onclick="toggleSidebar()">About</a>
     <a href="#interests" onclick="toggleSidebar()">Interests</a>
